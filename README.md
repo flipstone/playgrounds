@@ -11,3 +11,9 @@ A vagrant host will be spun up (using the Docker provider). Once you're done pla
 
 Any files you put in the `sandbox` directory will be available inside the playground in `/home/vagrant/sandbox`.
 Once you're in, just `cd sandbox` to get there!
+
+## Contributing
+
+Please contribute new playgrounds! Just follow the examples, use playground-base (or one of the other playground images)
+as your base, and make Dockerfile and VagrantFile. Submit a Pull Request and before merging we will build the image and
+push it to hub.docker.com before merging it!
