@@ -11,9 +11,10 @@ RUN /etc/init.d/postgresql start && \
     sudo -u postgres createuser --superuser vagrant && \
     sudo -u postgres createdb vagrant && \
     sudo -u vagrant touch /home/vagrant/.psql_history && \
+    echo "listen_addresses = '*'" >> /etc/postgresql/9.3/main/postgresql.conf && \
     echo "local all all peer" > /etc/postgresql/9.3/main/pg_hba.conf && \
-    echo "host all all 127.0.0.1/32 md5" >> /etc/postgresql/9.3/main/pg_hba.conf && \
-    echo "host all all ::1/128 md5" >> /etc/postgresql/9.3/main/pg_hba.conf && \
+    echo "host all all all md5" >> /etc/postgresql/9.3/main/pg_hba.conf && \
+    echo "host all all all md5" >> /etc/postgresql/9.3/main/pg_hba.conf && \
     echo '#! /bin/sh' >> /etc/my_init.d/01_start_postgresql.sh && \
     echo '/etc/init.d/postgresql start' >> /etc/my_init.d/01_start_postgresql.sh && \
     chmod 755 /etc/my_init.d/01_start_postgresql.sh
