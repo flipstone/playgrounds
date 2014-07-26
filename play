@@ -11,6 +11,11 @@ fi
 
 cd $PLAYGROUND
 vagrant up --provider=docker
+
+# want to destroy, even if ssh
+# has non-zero exit code
+set +e
 vagrant ssh
+
 vagrant destroy -f
 
