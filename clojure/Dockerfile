@@ -6,8 +6,5 @@ RUN apt-get update && \
     curl -o /usr/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && \
     chmod 0755 /usr/bin/lein
 
-USER vagrant
-RUN lein repl
-
-USER root
+RUN su vagrant lein repl
 
