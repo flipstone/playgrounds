@@ -16,3 +16,12 @@ RUN git clone http://github.com/fsharp/fsharp && \
     make install && \
     cd .. && \
     rm -rf fsharp
+
+ADD bin /usr/bin
+
+# nuget authorization
+RUN mozroots --import --machine --sync && \
+    (yes | certmgr -ssl -m https://go.microsoft.com) && \
+    (yes | certmgr -ssl -m https://nugetgallery.blob.core.windows.net) && \
+    (yes | certmgr -ssl -m https://nuget.org)
+
