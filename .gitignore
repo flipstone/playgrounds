@@ -1,3 +1,4 @@
 sandbox/*
 !sandbox/.gitkeep
 .vagrant
+.DS_Store
