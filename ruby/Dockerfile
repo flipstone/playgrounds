@@ -12,7 +12,7 @@ RUN chown -R vagrant.vagrant /home/vagrant/ruby-2.1.2
 USER vagrant
 RUN cd /home/vagrant/ruby-2.1.2 && \
     ./configure --prefix=/home/vagrant/ && \
-    echo 'export PATH=$PATH:/home/vagrant/bin/' >> /home/vagrant/.bashrc && \
+    echo 'export PATH=$PATH:/home/vagrant/bin' >> /home/vagrant/.bashrc && \
     make && \
     make install
 
