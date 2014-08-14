@@ -13,8 +13,6 @@ USER vagrant
 RUN cd /home/vagrant/ruby-2.1.2 && \
     ./configure --prefix=/home/vagrant/ && \
     echo 'export PATH=$PATH:/home/vagrant/bin/' >> /home/vagrant/.bashrc && \
-    ls /home/vagrant/ && \
-    pwd && \
     make && \
     make install
 
