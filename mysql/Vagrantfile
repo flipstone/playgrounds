@@ -1,0 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require_relative '../vagrant_config'
+configure_playground 'flipstone/playground-mysql'
+
